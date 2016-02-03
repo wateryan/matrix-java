@@ -1,8 +1,8 @@
-package com.wateryan.matrix.federation.impl;
+package com.wateryan.matrix.domain.federation.impl;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
-import com.wateryan.matrix.federation.Transaction;
+import com.wateryan.matrix.domain.federation.Transaction;
 
 import java.io.Serializable;
 import java.util.List;

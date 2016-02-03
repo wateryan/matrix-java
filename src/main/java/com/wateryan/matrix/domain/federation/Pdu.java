@@ -1,4 +1,4 @@
-package com.wateryan.matrix.federation;
+package com.wateryan.matrix.domain.federation;
 
 import java.io.Serializable;
 

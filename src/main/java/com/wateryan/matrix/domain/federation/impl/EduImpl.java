@@ -1,7 +1,7 @@
-package com.wateryan.matrix.federation.impl;
+package com.wateryan.matrix.domain.federation.impl;
 
 
-import com.wateryan.matrix.federation.Edu;
+import com.wateryan.matrix.domain.federation.Edu;
 
 import java.io.Serializable;
 
