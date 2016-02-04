@@ -1,7 +1,7 @@
-package com.wateryan.matrix.controller;
+package com.wateryan.matrix.federation.controller;
 
-import com.wateryan.matrix.domain.federation.Transaction;
-import com.wateryan.matrix.service.FederationService;
+import com.wateryan.matrix.federation.model.Transaction;
+import com.wateryan.matrix.federation.service.FederationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

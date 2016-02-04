@@ -1,4 +1,4 @@
-package com.wateryan.matrix.domain.federation;
+package com.wateryan.matrix.federation.model;
 
 /**
  * PDUs fall into two main categories: those that deliver Events, and those that synchronise State. For PDUs that relate to State synchronisation, additional keys exist to support this:

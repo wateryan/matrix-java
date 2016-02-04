@@ -1,7 +1,6 @@
-package com.wateryan.matrix.service;
+package com.wateryan.matrix.federation.service;
 
-import com.wateryan.matrix.domain.federation.Pdu;
-import com.wateryan.matrix.domain.federation.Transaction;
+import com.wateryan.matrix.federation.model.Transaction;
 
 import java.util.List;
 

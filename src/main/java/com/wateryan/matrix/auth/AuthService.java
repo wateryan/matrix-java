@@ -1,4 +1,4 @@
-package com.wateryan.matrix.service;
+package com.wateryan.matrix.auth;
 
 public interface AuthService {
 

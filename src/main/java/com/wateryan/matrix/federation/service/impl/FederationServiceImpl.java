@@ -1,7 +1,7 @@
-package com.wateryan.matrix.service.impl;
+package com.wateryan.matrix.federation.service.impl;
 
-import com.wateryan.matrix.domain.federation.Transaction;
-import com.wateryan.matrix.service.FederationService;
+import com.wateryan.matrix.federation.model.Transaction;
+import com.wateryan.matrix.federation.service.FederationService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
