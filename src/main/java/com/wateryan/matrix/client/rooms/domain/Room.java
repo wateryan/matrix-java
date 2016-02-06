@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Map;
 
 public class Room {
 
@@ -17,7 +18,8 @@ public class Room {
   private List<String> invite;
   @JsonProperty("invite_3pid")
   private List<ThirdPartyInvite> thirdPartyInvites;
-  private CreationContent creationContent;
+  @JsonProperty("creation_content")
+  private Map<String, Object> creationContent;
   @JsonProperty("initial_state")
   private List<StateEvent> initialState;
   private String roomAliasName;
@@ -50,7 +52,7 @@ public class Room {
     return thirdPartyInvites;
   }
 
-  public CreationContent getCreationContent() {
+  public Map<String, Object> getCreationContent() {
     return creationContent;
   }
 
@@ -86,7 +88,7 @@ public class Room {
     this.thirdPartyInvites = thirdPartyInvites;
   }
 
-  public void setCreationContent(CreationContent creationContent) {
+  public void setCreationContent(Map<String, Object> creationContent) {
     this.creationContent = creationContent;
   }
 
