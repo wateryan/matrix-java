@@ -24,6 +24,15 @@ public class RoomAliasService {
     this.roomAliasRepository.save(alias);
   }
 
+  public void deleteAlias(String roomAlias) {
+    Assert.notNull(roomAlias, "Room alias cannot be null");
+    this.roomAliasRepository.delete(roomAlias);
+  }
+
+  public RoomAlias getRoomByAlias(String roomAlias) {
+    return this.roomAliasRepository.findOne(roomAlias);
+  }
+
   @Autowired
   public void setRoomAliasRepository(RoomAliasRepository roomAliasRepository) {
     this.roomAliasRepository = roomAliasRepository;

@@ -1,5 +1,6 @@
 package com.wateryan.matrix.client.rooms.controller;
 
+import com.wateryan.matrix.client.rooms.domain.RoomAlias;
 import com.wateryan.matrix.client.rooms.service.RoomAliasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +10,19 @@ public class RoomAliasController {
 
   private RoomAliasService roomAliasService;
 
-  @RequestMapping(method = RequestMethod.PUT, value = "r0/directory/room/{roomAlias}")
+  @RequestMapping(method = RequestMethod.PUT, value = "/r0/directory/room/{roomAlias}")
   public void createAlias(@PathVariable("roomAlias") String roomAlias, @RequestBody String room_id) {
     this.roomAliasService.createAliasMapping(roomAlias, room_id);
+  }
+
+  @RequestMapping(method = RequestMethod.DELETE, value = "/r0/directory/room/{roomAlias}")
+  public void deleteAlias(@PathVariable("roomAlias") String roomAlias) {
+    this.roomAliasService.deleteAlias(roomAlias);
+  }
+
+  @RequestMapping(method = RequestMethod.GET, value = "/r0/directory/room/{roomAlias}")
+  public RoomAlias getRoomId(@PathVariable("roomAlias") String roomAlias) {
+    return this.roomAliasService.getRoomByAlias(roomAlias);
   }
 
   @Autowired
