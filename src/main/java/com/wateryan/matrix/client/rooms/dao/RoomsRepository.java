@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.rooms.service;
+package com.wateryan.matrix.client.rooms.dao;
 
 import com.wateryan.matrix.client.rooms.domain.Room;
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -1,5 +1,6 @@
 package com.wateryan.matrix.client.rooms.service;
 
+import com.wateryan.matrix.client.rooms.dao.RoomsRepository;
 import com.wateryan.matrix.client.rooms.domain.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
