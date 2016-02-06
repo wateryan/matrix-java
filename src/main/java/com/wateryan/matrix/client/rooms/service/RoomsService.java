@@ -1,25 +1,35 @@
 package com.wateryan.matrix.client.rooms.service;
 
 import com.wateryan.matrix.client.rooms.domain.Room;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
-public interface RoomsService {
+@Service
+public class RoomsService {
 
-  void deleteRoom(String roomId);
+  private RoomsRepository roomsRepository;
 
-  void deleteAlias(String roomId, String roomAlias);
+  public String createRoom(Room room) {
+    String roomId = createRandomRoomId();
+    room.setRoomId(roomId);
+    this.roomsRepository.save(room);
+    // TODO send invites?
+    // TODO m.toom.name events?
+    // TODO m.room.topic events?
+    // TODO 3pid invites
+    // TODO alias?
+    return roomId;
+  }
 
-  Room createRoom(@NotNull @Valid Room room);
+  private String createRandomRoomId() {
+    return UUID.randomUUID().toString();
+  }
 
-  Room setTopic(String roomId, String roomTopic);
-
-  Room setName(String roomId, String roomName);
-
-  Room findRoomByAlias(String roomAlias);
-
-  Room findRoomById(String roomId);
-
+  @Autowired
+  public void setRoomsRepository(RoomsRepository roomsRepository) {
+    this.roomsRepository = roomsRepository;
+  }
 
 }

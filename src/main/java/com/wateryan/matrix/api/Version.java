@@ -1,17 +1,7 @@
 package com.wateryan.matrix.api;
 
-public enum Version {
-  R_0("r0"),
-  V_1("v1");
+public class Version {
 
-  private final String versionString;
-
-  Version(String versionString) {
-    this.versionString = versionString;
-  }
-
-  public String getVersionString() {
-    return this.versionString;
-  }
-
+  public static final String R_0 = "r0";
+  public static final String V_1 = "v1";
 }

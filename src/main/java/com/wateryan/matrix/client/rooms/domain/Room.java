@@ -1,10 +1,7 @@
 package com.wateryan.matrix.client.rooms.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonView;
-import com.wateryan.matrix.events.StateEvent;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -12,24 +9,18 @@ import java.util.List;
 public class Room {
 
   @Id
-  @Indexed
-  @JsonView({Views.Create.class, Views.Directory.class})
+  @JsonProperty("room_id")
   private String roomId;
-  @NotNull
-  @JsonView(Views.Name.class)
   private String name;
-  private Visibility visibility;
-  // TODO 3pid
-  @JsonView(Views.Topic.class)
   private String topic;
-  private Preset preset;
-  @JsonProperty("creation_content")
+  private Visibility visibility;
+  private List<String> invite;
+  @JsonProperty("invite_3pid")
+  private List<ThirdPartyInvite> thirdPartyInvites;
   private CreationContent creationContent;
   @JsonProperty("initial_state")
-  private StateEvent initialState;
-  @JsonProperty("room_alias_name")
+  private List<StateEvent> initialState;
   private String roomAliasName;
-  private List<String> invite;
 
   public Room() {
 
@@ -43,23 +34,27 @@ public class Room {
     return name;
   }
 
-  public Visibility getVisibility() {
-    return visibility;
-  }
-
   public String getTopic() {
     return topic;
   }
 
-  public Preset getPreset() {
-    return preset;
+  public Visibility getVisibility() {
+    return visibility;
+  }
+
+  public List<String> getInvite() {
+    return invite;
+  }
+
+  public List<ThirdPartyInvite> getThirdPartyInvites() {
+    return thirdPartyInvites;
   }
 
   public CreationContent getCreationContent() {
     return creationContent;
   }
 
-  public StateEvent getInitialState() {
+  public List<StateEvent> getInitialState() {
     return initialState;
   }
 
@@ -67,52 +62,80 @@ public class Room {
     return roomAliasName;
   }
 
-  public List<String> getInvite() {
-    return invite;
-  }
-
-  public Room setRoomId(String roomId) {
+  public void setRoomId(String roomId) {
     this.roomId = roomId;
-    return this;
   }
 
-  public Room setName(String name) {
+  public void setName(String name) {
     this.name = name;
-    return this;
   }
 
-  public Room setVisibility(Visibility visibility) {
-    this.visibility = visibility;
-    return this;
-  }
-
-  public Room setTopic(String topic) {
+  public void setTopic(String topic) {
     this.topic = topic;
-    return this;
   }
 
-  public Room setPreset(Preset preset) {
-    this.preset = preset;
-    return this;
+  public void setVisibility(Visibility visibility) {
+    this.visibility = visibility;
   }
 
-  public Room setCreationContent(CreationContent creationContent) {
-    this.creationContent = creationContent;
-    return this;
-  }
-
-  public Room setInitialState(StateEvent initialState) {
-    this.initialState = initialState;
-    return this;
-  }
-
-  public Room setRoomAliasName(String roomAliasName) {
-    this.roomAliasName = roomAliasName;
-    return this;
-  }
-
-  public Room setInvite(List<String> invite) {
+  public void setInvite(List<String> invite) {
     this.invite = invite;
-    return this;
   }
+
+  public void setThirdPartyInvites(List<ThirdPartyInvite> thirdPartyInvites) {
+    this.thirdPartyInvites = thirdPartyInvites;
+  }
+
+  public void setCreationContent(CreationContent creationContent) {
+    this.creationContent = creationContent;
+  }
+
+  public void setInitialState(List<StateEvent> initialState) {
+    this.initialState = initialState;
+  }
+
+  public void setRoomAliasName(String roomAliasName) {
+    this.roomAliasName = roomAliasName;
+  }
+
+  public static class ThirdPartyInvite {
+
+    @NotNull
+    @JsonProperty("id_server")
+    private String idServer;
+    @NotNull
+    private String medium;
+    @NotNull
+    private String address;
+
+    public ThirdPartyInvite() {
+
+    }
+
+    public String getIdServer() {
+      return idServer;
+    }
+
+    public String getMedium() {
+      return medium;
+    }
+
+    public String getAddress() {
+      return address;
+    }
+
+    public void setIdServer(String idServer) {
+      this.idServer = idServer;
+    }
+
+    public void setMedium(String medium) {
+      this.medium = medium;
+    }
+
+    public void setAddress(String address) {
+      this.address = address;
+    }
+  }
+
+
 }
