@@ -16,12 +16,16 @@ public class RoomsService {
     String roomId = createRandomRoomId();
     room.setRoomId(roomId);
     this.roomsRepository.save(room);
-    // TODO send invites?
-    // TODO m.toom.name events?
-    // TODO m.room.topic events?
+    // TODO send invites
+    // TODO m.toom.name events
+    // TODO m.room.topic events
     // TODO 3pid invites
-    // TODO alias?
+    // TODO alias
     return roomId;
+  }
+
+  public void roomInvite(String roomId, String userId) {
+
   }
 
   private String createRandomRoomId() {

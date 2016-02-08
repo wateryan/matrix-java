@@ -5,8 +5,6 @@ import com.wateryan.matrix.client.rooms.domain.RoomAlias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
-import javax.validation.Valid;
-
 public class RoomAliasService {
 
   private RoomAliasRepository roomAliasRepository;
