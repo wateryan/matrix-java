@@ -12,6 +12,7 @@ public class ProfilesController {
 
   public static final String DISPLAY_NAME_URL = "/" + Version.R_0 + "/profile/{userId}/displayname";
   public static final String AVATAR_URL = "/" + Version.R_0 + "/profile/{userId}/avatar_url";
+  public static final String PROFILE_URL = "/" + Version.R_0 + "/profile/{userId}";
 
   private UserService userService;
 
@@ -34,6 +35,11 @@ public class ProfilesController {
   @JsonView(Views.AvatarUrl.class)
   @RequestMapping(method = RequestMethod.GET, value = AVATAR_URL)
   public User getAvatarUrl(@PathVariable("userId") String userId) {
+    return this.userService.getUser(userId);
+  }
+
+  @RequestMapping(method = RequestMethod.GET, value = PROFILE_URL)
+  public User getUserProfile(@PathVariable("userId") String userId) {
     return this.userService.getUser(userId);
   }
 

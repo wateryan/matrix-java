@@ -95,6 +95,21 @@ public class ProfilesControllerTest {
             .andExpect(status().is2xxSuccessful()).andExpect(jsonPath("$.avatar_url").value("url")).andReturn();
   }
 
+  @Test
+  public void testGetProfile() throws Exception {
+    String userId = UUID.randomUUID().toString();
+    User user = mockUser(userId, "testUser", "url", "password");
+    UserRepository userRepository = mockUserRepository(user);
+    UserService userService = new UserService();
+    userService.setUserRepository(userRepository);
+    this.profilesController.setUserService(userService);
+    String jsonRequest = this.objectMapper.writeValueAsString(user);
+    this.mockMvc.perform(
+            get(ProfilesController.PROFILE_URL, userId).contentType(MediaType.APPLICATION_JSON).content(jsonRequest))
+            .andExpect(status().is2xxSuccessful()).andExpect(jsonPath("$.displayname").value("testUser"))
+            .andExpect(jsonPath("$.avatar_url").value("url")).andReturn();
+  }
+
   private User mockUser(String userId, String displayName, String avatarUrl, String password) {
     User user = new User();
     user.setUserId(userId);
