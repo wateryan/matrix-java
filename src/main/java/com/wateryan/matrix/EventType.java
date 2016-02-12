@@ -1,7 +1,5 @@
 package com.wateryan.matrix;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public enum EventType {
 
   M_ROOM_POWER_LEVELS("m.room.power_levels"),

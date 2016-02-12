@@ -1,6 +1,6 @@
 package com.wateryan.matrix.client.dao;
 
-import com.wateryan.matrix.client.domain.User;
+import com.wateryan.matrix.client.domain.profile.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

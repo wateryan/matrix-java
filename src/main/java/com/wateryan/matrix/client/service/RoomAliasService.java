@@ -3,8 +3,10 @@ package com.wateryan.matrix.client.service;
 import com.wateryan.matrix.client.dao.RoomAliasRepository;
 import com.wateryan.matrix.client.domain.rooms.RoomAlias;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+@Service
 public class RoomAliasService {
 
   private RoomAliasRepository roomAliasRepository;

@@ -1,6 +1,8 @@
-package com.wateryan.matrix.client.domain;
+package com.wateryan.matrix.client.domain.profile;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.wateryan.matrix.client.domain.Views;
 import org.springframework.data.annotation.Id;
 
 public class User {
@@ -9,8 +11,10 @@ public class User {
   private String userId;
   @JsonProperty("password")
   private String password;
+  @JsonView(Views.AvatarUrl.class)
   @JsonProperty("avatar_url")
   private String avatarUrl;
+  @JsonView(Views.Name.class)
   @JsonProperty("displayname")
   private String displayName;
 

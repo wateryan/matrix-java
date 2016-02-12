@@ -1,9 +1,9 @@
 package com.wateryan.matrix.client.controller;
 
 import com.wateryan.matrix.api.Version;
+import com.wateryan.matrix.client.domain.profile.User;
 import com.wateryan.matrix.client.domain.rooms.Room;
 import com.wateryan.matrix.client.service.RoomsService;
-import com.wateryan.matrix.client.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
