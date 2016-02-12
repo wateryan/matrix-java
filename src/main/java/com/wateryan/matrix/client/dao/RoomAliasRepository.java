@@ -1,6 +1,6 @@
-package com.wateryan.matrix.client.rooms.dao;
+package com.wateryan.matrix.client.dao;
 
-import com.wateryan.matrix.client.rooms.domain.RoomAlias;
+import com.wateryan.matrix.client.domain.rooms.RoomAlias;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

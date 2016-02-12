@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.rooms.domain;
+package com.wateryan.matrix.client.domain.rooms;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;

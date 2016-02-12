@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.rooms.domain;
+package com.wateryan.matrix.client.domain.rooms;
 
 /**
  * Convenience parameter for setting various default state events based on a preset

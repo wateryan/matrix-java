@@ -1,9 +1,9 @@
-package com.wateryan.matrix.client.user;
+package com.wateryan.matrix.client.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.sun.org.apache.bcel.internal.generic.GETFIELD;
 import com.wateryan.matrix.api.Version;
-import com.wateryan.matrix.client.rooms.Views;
+import com.wateryan.matrix.client.domain.Views;
+import com.wateryan.matrix.client.domain.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController("/client")

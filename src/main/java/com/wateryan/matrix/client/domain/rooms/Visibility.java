@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.rooms.domain;
+package com.wateryan.matrix.client.domain.rooms;
 
 public enum Visibility {
 

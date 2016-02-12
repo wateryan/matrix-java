@@ -1,7 +1,7 @@
-package com.wateryan.matrix.client.rooms.controller;
+package com.wateryan.matrix.client.controller;
 
-import com.wateryan.matrix.client.rooms.domain.RoomAlias;
-import com.wateryan.matrix.client.rooms.service.RoomAliasService;
+import com.wateryan.matrix.client.domain.rooms.RoomAlias;
+import com.wateryan.matrix.client.service.RoomAliasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

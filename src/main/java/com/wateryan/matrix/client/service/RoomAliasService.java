@@ -1,7 +1,7 @@
-package com.wateryan.matrix.client.rooms.service;
+package com.wateryan.matrix.client.service;
 
-import com.wateryan.matrix.client.rooms.dao.RoomAliasRepository;
-import com.wateryan.matrix.client.rooms.domain.RoomAlias;
+import com.wateryan.matrix.client.dao.RoomAliasRepository;
+import com.wateryan.matrix.client.domain.rooms.RoomAlias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 

@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.rooms;
+package com.wateryan.matrix.client.domain;
 
 public class Views {
 

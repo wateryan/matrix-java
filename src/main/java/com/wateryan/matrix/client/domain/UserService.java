@@ -1,4 +1,4 @@
-package com.wateryan.matrix.client.user;
+package com.wateryan.matrix.client.domain;
 
 import org.springframework.stereotype.Service;
 
